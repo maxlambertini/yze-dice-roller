@@ -7,8 +7,6 @@ $(document).ready(function(){
 
     //receive details from server
     socket.on('rolled', function(msg) {
-        console.log("soccmel ben!")
-        console.log("Received number" +JSON.stringify(msg));
         //maintain a list of ten numbers
         var sData = `<div><b>${msg.who}</b> rolled</div><div>`
         if (msg.attr) sData+=`Attr: ${msg.attr} `
