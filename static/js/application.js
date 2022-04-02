@@ -7,19 +7,26 @@ $(document).ready(function(){
 
     //receive details from server
     socket.on('rolled', function(msg) {
-        console.log("Received number" + msg.number);
+        console.log("soccmel ben!")
+        console.log("Received number" +JSON.stringify(msg));
         //maintain a list of ten numbers
+        var sData = `<div><b>${msg.who}</b> rolled</div><div>`
+        if (msg.attr) sData+=`Attr: ${msg.attr} `
+        if (msg.skill) sData+=`Skill: ${msg.skill} `
+        if (msg.gear) sData+=`Gear ${msg.gear}</div>`;        
+        sData+="</div>"
+        numbers_received.push(sData);
         if (numbers_received.length >= 10){
             numbers_received.shift()
         }          
         
-        var sData = `<div><b>${msg.who}</b> rolled Attr: ${msg.attr} Skill: ${msg.skill} Gear ${msg.gear}</div>`;
-        
-        numbers_received.push(sData);
+        var len = numbers_received.length-1
         numbers_string = '';
         for (var i = 0; i < numbers_received.length; i++){
-            numbers_string = numbers_string + '<div>' + numbers_received[i].toString() + '</div>';
+
+            numbers_string = numbers_string + `<div class="result_line item_${i}">` + numbers_received[len-i].toString() + '</div>';
         }
+        console.log(numbers_string);
         $('#log').html(numbers_string);
     });
 

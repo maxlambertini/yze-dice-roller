@@ -1,144 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+        <meta http-equiv="Cache-Control" content="no-cache"/>
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <style>
-      i.x { display: inline-block; width: 1em; height: 1em; background-color: silver;}
-      i.success { display: inline-block; width: 1em; height: 1em; background-color: green;}
-      i.bane { display: inline-block; width: 1em; height: 1em; background-color: red;}
-      i.one { display: inline-block; width: 1em; height: 1em; background-color: orange;}
-
-      /* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="menu"],
-ol[role="menu"] {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li[role="menuitem"] {
-  display:inline-block;
-}
-
-li[role="menu"] {
-    display: inline-block;
-}
-
-@media screen and (max-width: 767px) {
-footer li[role="menuitem"] {
-  min-height:48px;
-  min-width:48px;
-  padding: 4px;
-}
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-body {
-  /* on my stack precedence is: linux first, then windoze, apple last. Change according to your tastes */
-  font-family: 
-     'Noto Sans'              /* plasma uses noto */
-    ,'Fira Sans'              /* POP-OS! uses FIRA */
-    ,Oxygen-Sans              /* Holdouts using Plasma */
-    ,Ubuntu                   /* Ubuntu font has a nice techno edge */
-    ,Cantarell                /* Gnome */
-    ,Roboto                   /* Droid */
-    ,"Segoe UI"               
-    ,"Trebuchet MS"
-    ,"Corbel"
-    ,"Helvetica Neue"
-    ,"Arial"
-    ,sans-serif
-    ,BlinkMacSystemFont
-    ,-apple-system;
-}
-
-main {
-  min-height: 40rem;    
-  margin: 0 auto;
-  max-width: 70ch;
-  font-size: 1.2rem;
-  padding: 3ch 0ch;
-}
-
-label { display: block; }
-
-.row {
-  margin: 0.5em 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.column { padding: 0 1em 0 0;}
-
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/style.css" />
 </head>
 <body>
   <main>
@@ -147,53 +15,73 @@ label { display: block; }
 </div>
 
 <div class="container" id="content">
-    <div class="grid">
-    <div class="row">
-      <div class="column">
-        <div class="field">
-          <label for="nick">Nick</label>
-          <input type="text" class="form-control" id="nick">
+    <div class="grid">  
+      <div class="col1">
+        <div class="row">
+          <div class="column">
+            <div class="field">
+              <label for="nick">Nick</label>
+              <input type="text" class="form-control" id="nick">
+            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="column">
+            <div class="field">
+              <label for="attr">Attribute</label>
+              <select id="attr">
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label for="skill">Skill</label>
+              <select id="skill">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label for="gear">Gear</label>
+              <select id="gear">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+              <button id="btn">Tira i dadi!.</button>
+              &nbsp;
+              <button id="btnPush">PUSH !!!</button>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+      <div class="col2">
+        <div class="results">
+          <h3>Risultati:</h3>
+          <div id="log">
+          </div> <!-- /#log -->
+      </div>    
       </div>
     </div>
-    <div class="row">
-      <div class="column">
-        <div class="field">
-          <label for="attr">Attribute</label>
-          <input type="number" min="2" max="5" class="form-control" id="attr">
-        </div>
-      </div>
-      <div class="column">
-        <div class="field">
-          <label for="skill">Skill</label>
-          <input type="number" min="0" max="5" class="form-control" id="skill">
-        </div>
-      </div>
-      <div class="column">
-        <div class="field">
-          <label for="gear">Gear</label>
-          <input type="number" min="0" max="5" class="form-control" id="gear">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column">
-        <div class="field">
-          <button id="btn">Tira i dadi!.</button>
-        </div>
-      </div>
-      <div class="column">
-        <div class="field">
-          <button id="btnPush">PUSH !!!</button>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="results">
-      <h3>Risultati:</h3>
-      <div id="log">
-      </div> <!-- /#log -->
-  </div>
 </div>
 
 </main>

@@ -21,18 +21,18 @@ const rollYZE = (numDice, push) => {
         const w = Math.floor(Math.random()*6)+1
         if (w == 1) {
             if (push)
-                res.push("<i class='bane'></i>")
+                res.push(`<i class='bane'>${w}</i>`)
             else
-                res.push("<i class='one'></i>")
+                res.push(`<i class='one'>${w}</i>`)
         }
         else if (w == 6)
-            res.push("<i class='success'></i>")
+            res.push(`<i class='success'>${w}</i>`)
         else
-            res.push("<i class='x'></i>")
+            res.push(`<i class='x'>${w}</i>`)
     }
     return res.join(' ');
 
-}    
+}     
 
 app.use('/static', express.static('static'));
 

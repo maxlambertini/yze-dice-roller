@@ -1,0 +1,169 @@
+i.x { border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; background-color: #FFFF40;}
+i.success { border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; color:white; background-color: green;}
+i.bane { border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; color:white; background-color: black;}
+i.one { border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; color:white; background-color: gray;}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="menu"],
+ol[role="menu"] {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+li[role="menuitem"] {
+display:inline-block;
+}
+
+li[role="menu"] {
+display: inline-block;
+}
+
+@media screen and (max-width: 767px) {
+footer li[role="menuitem"] {
+min-height:48px;
+min-width:48px;
+padding: 4px;
+}
+}
+
+/* Set core root defaults */
+html:focus-within {
+scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+min-height: 100vh;
+text-rendering: optimizeSpeed;
+line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+max-width: 100%;
+display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+html:focus-within {
+scroll-behavior: auto;
+}
+*,
+*::before,
+*::after {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+scroll-behavior: auto !important;
+}
+}
+
+body {
+/* on my stack precedence is: linux first, then windoze, apple last. Change according to your tastes */
+font-family: 
+'Noto Sans'              /* plasma uses noto */
+,'Fira Sans'              /* POP-OS! uses FIRA */
+,Oxygen-Sans              /* Holdouts using Plasma */
+,Ubuntu                   /* Ubuntu font has a nice techno edge */
+,Cantarell                /* Gnome */
+,Roboto                   /* Droid */
+,"Segoe UI"               
+,"Trebuchet MS"
+,"Corbel"
+,"Helvetica Neue"
+,"Arial"
+,sans-serif
+,BlinkMacSystemFont
+,-apple-system;
+}
+
+main {
+min-height: 40rem;    
+margin: 0 auto;
+max-width: 1024px;
+padding: 3ch 1ch;
+font-size: 1em;
+}
+
+label { display: block; }
+
+.row {
+    margin: 0.5em 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5rem;
+    grid-auto-flow: dense;
+}
+
+.result_line {
+    margin-bottom: 0.5rem;
+}
+
+@media  (min-width:768px) {
+    main {
+        width:95%;
+        margin: 0 auto;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        
+    }
+}
+
+@media  (min-width:768px) {
+    .result_line {
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+        gap:0.5rem;
+        grid-auto-flow: dense;
+        margin-bottom: 0.5rem;
+    }
+        
+}
+
+.column INPUT {
+    max-width: 150px;;
+}
+
+input#nick {max-width:300px; } 
+
+.item_0 {
+    font-size: 1.1em;
+    background-color: #ffff80;
+}
