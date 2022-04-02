@@ -1,7 +1,7 @@
-i.x { border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; background-color: #FFFF40;}
-i.success { border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; color:white; background-color: green;}
-i.bane { border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; color:white; background-color: black;}
-i.one { border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; color:white; background-color: gray;}
+i.x { margin: 0.2rem; border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; background-color: #FFFF40;}
+i.success { margin: 0.2rem; border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; color:white; background-color: green;}
+i.bane { margin: 0.2rem; border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; color:white; background-color: black;}
+i.one { margin: 0.2rem; border: 1px solid black; border-radius: 0.2em; text-align: center; display: inline-block; width: 2em; height: 2em; color:white; background-color: gray;}
 
 /* Box sizing rules */
 *,
@@ -124,16 +124,19 @@ font-size: 1em;
 
 label { display: block; }
 
+H1 { font-size: 1.4em;} 
+
 .row {
     margin: 0.5em 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 0.5rem;
     grid-auto-flow: dense;
 }
 
 .result_line {
     margin-bottom: 0.5rem;
+    padding: 1rem;
 }
 
 @media  (min-width:768px) {
@@ -154,6 +157,8 @@ label { display: block; }
         grid-auto-flow: dense;
         margin-bottom: 0.5rem;
     }
+
+    H1 { font-size: 2em;} 
         
 }
 
